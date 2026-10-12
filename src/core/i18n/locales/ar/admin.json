@@ -1,0 +1,57 @@
+{
+  "users": {
+    "invitationSent": "تم إرسال الدعوة بنجاح",
+    "invitationAccepted": "تم قبول الدعوة بنجاح",
+    "invitationResent": "تم إعادة إرسال الدعوة بنجاح",
+    "userCreated": "تم إنشاء المستخدم الإداري بنجاح",
+    "userUpdated": "تم تحديث المستخدم الإداري بنجاح",
+    "userDeleted": "تم حذف المستخدم الإداري بنجاح",
+    "userNotFound": "المستخدم الإداري غير موجود",
+    "userAlreadyExists": "المستخدم الإداري موجود بالفعل",
+    "invalidToken": "رمز الدعوة غير صالح أو منتهي الصلاحية",
+    "maxResendReached": "تم الوصول إلى الحد الأقصى لمحاولات إعادة الإرسال",
+    "invalidRole": "معرف الدور المقدم غير صالح",
+    "invalidProvider": "معرف مزود الخدمة المقدم غير صالح",
+    "userNotInvited": "المستخدم غير مدعو",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordNotRequired": "كلمة المرور غير مطلوبة لمستخدمي مزود الخدمة",
+    "invitationAlreadyAccepted": "تم قبول الدعوة بالفعل",
+    "invitationInfoRetrieved": "تم استرجاع معلومات الدعوة بنجاح",
+    "formOptionsRetrieved": "تم استرجاع خيارات النموذج بنجاح",
+    "listRetrieved": "تم استرجاع قائمة المستخدمين الإداريين بنجاح",
+    "userRetrieved": "تم استرجاع المستخدم الإداري بنجاح",
+    "cannotDeleteSystemAdmin": "لا يمكن حذف المستخدم الإداري النظامي",
+    "cannotUpdateSystemAdmin": "لا يمكن تحديث المستخدم الإداري النظامي"
+  },
+  "roles": {
+    "created": "تم إنشاء الدور بنجاح",
+    "roleUpdated": "تم تحديث الدور بنجاح",
+    "roleDeleted": "تم حذف الدور بنجاح",
+    "roleNotFound": "الدور غير موجود",
+    "roleAlreadyExists": "الدور موجود بالفعل",
+    "listRetrieved": "تم استرجاع قائمة الأدوار بنجاح",
+    "roleRetrieved": "تم استرجاع الدور بنجاح",
+    "permissionsRetrieved": "تم استرجاع أذونات الدور بنجاح",
+    "invalidPermissions": "معرفات الأذونات المقدمة غير صالحة",
+    "cannotUpdateSystemRole": "لا يمكن تحديث دور النظام",
+    "cannotDeleteSystemRole": "لا يمكن حذف دور النظام",
+    "roleInUse": "الدور مسند حالياً للمستخدمين ولا يمكن حذفه"
+  },
+  "permissions": {
+    "permissionGranted": "تم منح الإذن بنجاح",
+    "permissionRevoked": "تم سحب الإذن بنجاح",
+    "insufficientPermissions": "أذونات غير كافية"
+  },
+  "providers": {
+    "created": "تم إنشاء مزود الخدمة الإداري بنجاح",
+    "listRetrieved": "تم استرجاع قائمة مزودي الخدمة الإداريين بنجاح",
+    "activeRetrieved": "تم استرجاع مزودي الخدمة الإداريين النشطين بنجاح",
+    "providerRetrieved": "تم استرجاع مزود الخدمة الإداري بنجاح",
+    "providerUpdated": "تم تحديث مزود الخدمة الإداري بنجاح",
+    "statusToggled": "تم تغيير حالة مزود الخدمة الإداري بنجاح",
+    "providerDeleted": "تم حذف مزود الخدمة الإداري بنجاح",
+    "providerAlreadyExists": "مزود الخدمة الإداري موجود بالفعل",
+    "providerNotFound": "مزود الخدمة الإداري غير موجود",
+    "providerInUse": "مزود الخدمة الإداري قيد الاستخدام حالياً"
+  }
+}

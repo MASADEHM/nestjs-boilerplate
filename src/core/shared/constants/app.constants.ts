@@ -1,0 +1,5 @@
+// === DEFAULT VALUES ===
+export const DEFAULTS = {
+  PAGINATION_LIMIT: 10,
+  PAGINATION_MAX_LIMIT: 100,
+} as const;

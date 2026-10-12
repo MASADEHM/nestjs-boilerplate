@@ -1,0 +1,91 @@
+services:
+  # Your NestJS Application - Commented out for local development
+  # Uncomment this section when you want to run the full stack in Docker
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.production
+  #   ports:
+  #     - '3000:3000'
+  #   env_file:
+  #     - .env.docker
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #     mailpit:
+  #       condition: service_started
+  #   volumes:
+  #     - ./logs:/app/logs # Winston logs (access, info, error, critical, etc.)
+  #     - ./uploads:/app/uploads # File uploads
+  #     - ./keys:/app/keys # SSL keys and certificates
+  #   networks:
+  #     - app-network
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:latest
+    env_file:
+      - .env.docker
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    networks:
+      - app-network
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-APP_DB_NEW}',
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+  # mailpit for testing emails
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - '1025:1025' # SMTP port
+      - '8025:8025' # Web interface
+    networks:
+      - app-network
+
+  # pgAdmin for database management
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    env_file:
+      - .env.docker
+    ports:
+      - '5050:80'
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  app-network:
+    driver: bridge

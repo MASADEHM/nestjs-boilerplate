@@ -1,0 +1,54 @@
+---
+description: Authentication patterns - JWT guards, decorators
+globs: "**/*.controller.ts"
+alwaysApply: false
+---
+
+# Authentication Patterns
+
+## Protected Endpoint
+
+```typescript
+import { JwtAuthGuard } from '@core/auth/guards';
+import { CurrentUser } from '@core/auth/decorators';
+import { AuthenticatedUser } from '@core/auth/types';
+
+@UseGuards(JwtAuthGuard)
+@Controller('items')
+export class ItemController {
+  @Get('profile')
+  async getProfile(@CurrentUser() user: AuthenticatedUser) {
+    return user;
+  }
+}
+```
+
+## Public Endpoint (Bypass Auth)
+
+```typescript
+import { Public } from '@core/auth/decorators';
+
+@Controller('items')
+export class ItemController {
+  @Public()
+  @Get('health')
+  async healthCheck() {
+    return { status: 'ok' };
+  }
+}
+```
+
+## Audit Info Decorator
+
+```typescript
+import { AuditRequestInfo } from '@core/auth/decorators';
+import { AuditInfo } from '@core/auth/types';
+
+@Post()
+async create(
+  @Body() dto: CreateDto,
+  @AuditRequestInfo() auditInfo: AuditInfo
+) {
+  // auditInfo contains user info for audit fields
+}
+```

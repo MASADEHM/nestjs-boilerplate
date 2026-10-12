@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Two-Factor Authentication - Marsa</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f9;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .header {
+        background: linear-gradient(135deg, #fd7e14 0%, #e83e8c 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+      .content {
+        padding: 40px 30px;
+        text-align: center;
+      }
+      .verification-code {
+        display: inline-block;
+        background: #f8f9fa;
+        border: 2px dashed #fd7e14;
+        border-radius: 8px;
+        padding: 20px 30px;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 8px;
+        color: #fd7e14;
+        margin: 20px 0;
+        font-family: 'Courier New', monospace;
+      }
+      .security-notice {
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 6px;
+        padding: 15px;
+        margin: 20px 0;
+        color: #721c24;
+      }
+      .expiry-notice {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 6px;
+        padding: 15px;
+        margin: 20px 0;
+        color: #856404;
+      }
+      .footer {
+        background: #f8f9fa;
+        padding: 20px 30px;
+        text-align: center;
+        color: #6c757d;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='header'>
+        <h1>🔒 Two-Factor Authentication</h1>
+        <p>Marsa - Marina Management System</p>
+      </div>
+
+      <div class='content'>
+        <h2>Hello {{userName}}!</h2>
+        <p>Your two-factor authentication code is:</p>
+
+        <div class='verification-code'>
+          {{verificationCode}}
+        </div>
+
+        <div class='security-notice'>
+          🛡️
+          <strong>Security Notice:</strong>
+          Never share this code with anyone. Marsa staff will never ask for your
+          verification code.
+        </div>
+
+        <div class='expiry-notice'>
+          ⏱️
+          <strong>Important:</strong>
+          This code will expire in
+          {{expiryMinutes}}
+          minutes for security reasons.
+        </div>
+
+        <p>If you didn't request this code, please contact our support team
+          immediately.</p>
+      </div>
+
+      <div class='footer'>
+        <p>© 2024 Marsa. All rights reserved.</p>
+        <p>This is an automated email, please do not reply.</p>
+      </div>
+    </div>
+  </body>
+</html>

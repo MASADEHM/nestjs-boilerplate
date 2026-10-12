@@ -1,0 +1,13 @@
+{
+  "success": "تمت العملية بنجاح",
+  "created": "تم إنشاء السجل بنجاح",
+  "updated": "تم تحديث السجل بنجاح",
+  "deleted": "تم حذف السجل بنجاح",
+  "notFound": "السجل غير موجود",
+  "alreadyExists": "السجل موجود بالفعل",
+  "unauthorized": "وصول غير مصرح به",
+  "forbidden": "الوصول محظور",
+  "validationError": "خطأ في التحقق",
+  "internalError": "خطأ داخلي في الخادم",
+  "invalidCompanyId": "معرف الشركة غير صحيح"
+}

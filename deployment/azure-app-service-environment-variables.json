@@ -1,0 +1,150 @@
+[
+  {
+    "name": "NODE_ENV",
+    "value": "production"
+  },
+  {
+    "name": "PORT",
+    "value": "8080"
+  },
+  {
+    "name": "DATABASE_URL",
+    "value": "postgresql://username:password@server:5432/database_name?sslmode=require"
+  },
+  {
+    "name": "JWT_ADMIN_SECRET",
+    "value": "your-admin-jwt-secret-here"
+  },
+  {
+    "name": "JWT_ADMIN_EXPIRES_IN",
+    "value": "24h"
+  },
+  {
+    "name": "JWT_USER_SECRET",
+    "value": "your-user-jwt-secret-here"
+  },
+  {
+    "name": "JWT_USER_EXPIRES_IN",
+    "value": "24h"
+  },
+  {
+    "name": "JWT_SECRET",
+    "value": "your-legacy-jwt-secret-here"
+  },
+  {
+    "name": "JWT_EXPIRES_IN",
+    "value": "24h"
+  },
+  {
+    "name": "CORS_ALLOWED_ORIGINS",
+    "value": "https://yourdomain.com,https://www.yourdomain.com"
+  },
+  {
+    "name": "FRONTEND_URL",
+    "value": "https://yourdomain.com"
+  },
+  {
+    "name": "EMAIL_PROVIDER",
+    "value": "sendgrid"
+  },
+  {
+    "name": "SMTP_HOST",
+    "value": "smtp.gmail.com"
+  },
+  {
+    "name": "SMTP_PORT",
+    "value": "587"
+  },
+  {
+    "name": "SMTP_USER",
+    "value": "your-email@gmail.com"
+  },
+  {
+    "name": "SMTP_PASS",
+    "value": "your-app-password"
+  },
+  {
+    "name": "SENDGRID_API_KEY",
+    "value": "your-sendgrid-api-key"
+  },
+  {
+    "name": "SENDGRID_FROM_EMAIL",
+    "value": "noreply@yourdomain.com"
+  },
+  {
+    "name": "SENDGRID_FROM_NAME",
+    "value": "Your App Name"
+  },
+  {
+    "name": "MAILGUN_API_KEY",
+    "value": "your-mailgun-api-key"
+  },
+  {
+    "name": "MAILGUN_DOMAIN",
+    "value": "mg.yourdomain.com"
+  },
+  {
+    "name": "MAILGUN_FROM_EMAIL",
+    "value": "noreply@yourdomain.com"
+  },
+  {
+    "name": "MAILGUN_FROM_NAME",
+    "value": "Your App Name"
+  },
+  {
+    "name": "REDIS_HOST",
+    "value": "your-redis-host.redis.cache.windows.net"
+  },
+  {
+    "name": "REDIS_PORT",
+    "value": "6380"
+  },
+  {
+    "name": "REDIS_PASSWORD",
+    "value": "your-redis-password"
+  },
+  {
+    "name": "REDIS_DB",
+    "value": "0"
+  },
+  {
+    "name": "BULL_BOARD_USERNAME",
+    "value": "admin"
+  },
+  {
+    "name": "BULL_BOARD_PASSWORD",
+    "value": "your-bull-board-password"
+  },
+  {
+    "name": "BOOKING_DEFAULT_PAYMENT_EXPIRY_HOURS",
+    "value": "24"
+  },
+  {
+    "name": "BOOKING_DEFAULT_SLOT_DURATION_HOURS",
+    "value": "1"
+  },
+  {
+    "name": "BOOKING_DEFAULT_MINIMUM_SLOTS",
+    "value": "1"
+  },
+  {
+    "name": "BOOKING_DEFAULT_MAX_BOOKING_AHEAD_DAYS",
+    "value": "30"
+  },
+  {
+    "name": "BOOKING_DEFAULT_HOURLY_RATE",
+    "value": "50.00"
+  },
+  {
+    "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+    "value": "false"
+  },
+  {
+    "name": "DB_SEEDING_USERNAME",
+    "value": "admin"
+  },
+  {
+    "name": "DB_SEEDING_PASSWORD",
+    "value": "admin123"
+  }
+]

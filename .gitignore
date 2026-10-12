@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+
+# Testing
+/coverage
+
+# Production
+/build
+/dist
+
+# Environment files
+.env
+.env.docker
+
+# Security - RSA Keys and Certificates
+keys/
+*.pem
+*.p12
+*.jks
+*.crt
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.build.tsbuildinfo
+
+# Prisma
+/prisma/*.db
+
+# Logs and logging artifacts  
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Winston audit files (contain absolute paths)
+.*-audit.json
+
+
+ai_instructions
+uploads/
+rosoom-java-api
+rosoom-java-api/*

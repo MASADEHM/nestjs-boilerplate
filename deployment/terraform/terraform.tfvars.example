@@ -1,0 +1,34 @@
+# Project Configuration
+project_name = "Marsa"
+environment  = "dev"
+location     = "UAE North"  # Dubai region for optimal Middle East performance
+
+# Database Configuration
+db_admin_username = "Marsa_admin"
+db_admin_password = "YourSecurePassword123!"
+
+# JWT Configuration (Separate secrets for admin and user systems)
+jwt_admin_secret  = "your-admin-jwt-secret-here"       # Admin authentication
+jwt_user_secret   = "your-user-jwt-secret-here"        # User authentication
+
+# Bull Board Dashboard Configuration
+bull_board_username = "admin"
+bull_board_password = "YourSecureDashboardPassword123!"
+
+# Frontend Configuration
+frontend_url = "https://app.Marsa.com"
+
+# CORS Configuration (for production)
+allowed_origins = [
+  "https://app.Marsa.com",
+  "https://admin.Marsa.com"
+]
+
+# Tags
+tags = {
+  Project     = "Marsa"
+  Environment = "Development"
+  ManagedBy   = "Terraform"
+  Owner       = "YourTeam"
+  Region      = "Middle East"
+} 

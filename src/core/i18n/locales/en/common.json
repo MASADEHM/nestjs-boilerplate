@@ -1,0 +1,13 @@
+{
+  "success": "Operation completed successfully",
+  "created": "Resource created successfully",
+  "updated": "Resource updated successfully",
+  "deleted": "Resource deleted successfully",
+  "notFound": "Resource not found",
+  "alreadyExists": "Resource already exists",
+  "unauthorized": "Unauthorized access",
+  "forbidden": "Access forbidden",
+  "validationError": "Validation error",
+  "internalError": "Internal server error",
+  "invalidCompanyId": "Invalid company ID"
+}

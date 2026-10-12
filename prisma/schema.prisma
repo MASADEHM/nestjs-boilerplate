@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+enum UserStatus {
+  INVITED
+  UNDER_VERIFICATION
+  ACTIVE
+  SUSPENDED
+}
+
+enum UserGender {
+  MALE
+  FEMALE
+}
+
+// =====================================
+// 📋 MODELS
+// =====================================
+
+model Files {
+  id            Int      @id @default(autoincrement())
+  // Relative path after file type folder 
+  //(e.g., "contracts/contract-123.pdf" => uploads/private/contracts/contract-123.pdf)
+  // (e.g., "marina-assets/marina-logo.png" => uploads/public/marina-assets/marina-logo.png)
+  file_path     String   @unique
+  original_name String
+  file_size     Int
+  mime_type     String
+  type          String
+  is_public     Boolean  @default(false) // private (example contracts)
+  is_temp       Boolean  @default(false) // true for temporary uploads, false when complete the process
+  is_deleted    Boolean  @default(false) // soft delete flag
+  created_by    String
+  updated_by    String
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  @@map("files")
+}
+
+
+model Users {
+  // Main fields
+  id                          Int                  @id @default(autoincrement())
+  full_name                   String
+  full_name_ar                String
+  email                       String               @unique
+  pobox                       String?
+  ppno                        String?              @unique
+  pp_issue_date               DateTime?
+  pp_expiry_date              DateTime?
+  eid                         String?              @unique
+  eid_issue_date              DateTime?
+  eid_expiry_date             DateTime?
+  nationality_id              Int?
+  mobile                      String               @unique
+  password                    String?
+  status                      UserStatus           @default(UNDER_VERIFICATION)
+  gender                      UserGender?
+  date_of_birth               DateTime?            @db.Date
+  email_verified              Boolean              @default(false)
+  mobile_verified             Boolean              @default(false)
+
+  unified_id String? @unique // Unified profile ID from uae pass response
+
+  // UAE Pass specific fields
+  uae_pass_id                String?   @unique // UAE Pass unique identifier
+  uae_pass_verified          Boolean   @default(false)
+  uae_pass_verification_date DateTime?
+
+  // Audit fields
+  created_by String
+  updated_by String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  // Relations
+  nationality                Countries?            @relation(fields: [nationality_id], references: [id])
+
+  @@index([nationality_id])
+  @@map("users")
+}
+
+model Countries {
+  id         Int      @id @default(autoincrement())
+  name    String
+  name_ar    String
+  iso_code String   @unique
+  code       String   @unique
+  is_active  Boolean  @default(true)
+  created_by String
+  updated_by String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  // Relations
+  users   Users[] // User nationality
+
+  @@map("nationalities")
+}

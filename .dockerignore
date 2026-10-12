@@ -1,0 +1,103 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs (will be rebuilt)
+dist/
+build/
+coverage/
+uploads
+
+# Environment files (environment specific)
+.env*
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Docker files (not needed inside container)
+Dockerfile*
+.dockerignore
+docker-compose*.yml
+
+# CI/CD (not needed in container)
+.github/
+
+# Deployment scripts (not needed in container)
+deployment/
+scripts/
+
+# Documentation (not needed in container)
+*.md
+docs/
+README.md
+DEVELOPMENT_GUIDELINE.md
+ADVANCED_QUERY_USAGE.md
+
+# Development tools (not needed in container)
+.prettierrc
+.prettierignore
+eslint.config.mjs
+tsconfig.build.json
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory
+coverage/
+*.lcov
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Testing (not needed in production container)
+test/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Temporary files
+*.tmp
+*.temp 
+
+
+
+
+
+

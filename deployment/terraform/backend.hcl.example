@@ -1,0 +1,8 @@
+# Backend configuration for Terraform state
+# Copy this file to backend.hcl and update with your values
+# Use: terraform init -backend-config="backend.hcl"
+
+resource_group_name  = "terraform-state-rg"
+storage_account_name = "Marsatfstate"
+container_name       = "tfstate"
+key                  = "api/terraform.tfstate" 

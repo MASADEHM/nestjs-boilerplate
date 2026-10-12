@@ -1,0 +1,57 @@
+{
+  "users": {
+    "invitationSent": "Invitation sent successfully",
+    "invitationAccepted": "Invitation accepted successfully",
+    "invitationResent": "Invitation resent successfully",
+    "userCreated": "Admin user created successfully",
+    "userUpdated": "Admin user updated successfully",
+    "userDeleted": "Admin user deleted successfully",
+    "userNotFound": "Admin user not found",
+    "userAlreadyExists": "Admin user already exists",
+    "invalidToken": "Invalid or expired invitation token",
+    "maxResendReached": "Maximum resend attempts reached",
+    "invalidRole": "Invalid role ID provided",
+    "invalidProvider": "Invalid provider ID provided",
+    "userNotInvited": "User is not invited",
+    "passwordRequired": "Password is required",
+    "passwordNotRequired": "Password is not required for provider users",
+    "invitationAlreadyAccepted": "Invitation has already been accepted",
+    "invitationInfoRetrieved": "Invitation information retrieved successfully",
+    "formOptionsRetrieved": "Form options retrieved successfully",
+    "listRetrieved": "Admin users list retrieved successfully",
+    "userRetrieved": "Admin user retrieved successfully",
+    "cannotDeleteSystemAdmin": "Cannot delete system admin",
+    "cannotUpdateSystemAdmin": "Cannot update system admin"
+  },
+  "roles": {
+    "created": "Role created successfully",
+    "roleUpdated": "Role updated successfully",
+    "roleDeleted": "Role deleted successfully",
+    "roleNotFound": "Role not found",
+    "roleAlreadyExists": "Role already exists",
+    "listRetrieved": "Roles list retrieved successfully",
+    "roleRetrieved": "Role retrieved successfully",
+    "permissionsRetrieved": "Role permissions retrieved successfully",
+    "invalidPermissions": "Invalid permission IDs provided",
+    "cannotUpdateSystemRole": "Cannot update system role",
+    "cannotDeleteSystemRole": "Cannot delete system role",
+    "roleInUse": "Role is currently assigned to users and cannot be deleted"
+  },
+  "permissions": {
+    "permissionGranted": "Permission granted successfully",
+    "permissionRevoked": "Permission revoked successfully",
+    "insufficientPermissions": "Insufficient permissions"
+  },
+  "providers": {
+    "created": "Admin provider created successfully",
+    "listRetrieved": "Admin providers list retrieved successfully",
+    "activeRetrieved": "Active admin providers retrieved successfully",
+    "providerRetrieved": "Admin provider retrieved successfully",
+    "providerUpdated": "Admin provider updated successfully",
+    "statusToggled": "Admin provider status toggled successfully",
+    "providerDeleted": "Admin provider deleted successfully",
+    "providerAlreadyExists": "Admin provider already exists",
+    "providerNotFound": "Admin provider not found",
+    "providerInUse": "Admin provider is currently in use"
+  }
+}

@@ -1,0 +1,83 @@
+---
+description: NestJS development standards - coding patterns, exceptions, responses, i18n
+globs: "**/*.ts"
+alwaysApply: false
+---
+
+# NestJS Development Standards
+
+## Path Aliases
+
+```typescript
+// ✅ Use aliases
+import { ResponseHelper } from '@core/shared/helpers/response.helper';
+import { ApiException } from '@core/shared/exceptions/api.exception';
+
+// ❌ Avoid relative imports
+import { ResponseHelper } from '../../../core/shared/helpers/response.helper';
+```
+
+## Exception Handling
+
+Services use `ApiException`, not NestJS exceptions:
+
+```typescript
+// ✅ Correct
+const message = i18n.t('users.notFound');
+throw ApiException.notFound(message);
+
+// ❌ Wrong
+throw new NotFoundException('User not found');
+```
+
+## Controller Pattern
+
+No try-catch, use ResponseHelper with i18n:
+
+```typescript
+async create(
+  @Body() dto: CreateDto,
+  @AuditRequestInfo() auditInfo: AuditInfo,
+  @I18n() i18n: I18nContext<I18nTranslations>,
+  @Res() response: Response
+) {
+  const result = await this.service.create(dto, auditInfo, i18n);
+  const message = i18n.t('users.created');
+  ResponseHelper.created(result, response, message);
+}
+```
+
+## Service Pattern
+
+Pass i18n context, use Prisma, use audit helper:
+
+```typescript
+async create(
+  dto: CreateDto,
+  auditInfo: AuditInfo,
+  i18n: I18nContext<I18nTranslations>
+): Promise<UserResponse> {
+  const auditFields = createAuditFields(auditInfo);
+  // ... business logic
+}
+```
+
+## Response Classes
+
+Extend BaseResponseTransformer:
+
+```typescript
+export class ItemResponse extends BaseResponseTransformer {
+  id: number;
+  name: string;
+}
+// Usage: ItemResponse.from(data), ItemResponse.fromMany(data)
+```
+
+## Quick Rules
+
+- Use `??` not `||` for nullish coalescing
+- Always add explicit return types
+- Use `createAuditFields(auditInfo)` for audit fields
+- Use Prisma `$transaction` for related operations
+- Translate first, then pass message to ResponseHelper/ApiException
